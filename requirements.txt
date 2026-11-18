@@ -4,3 +4,6 @@ accelerate
 sentence-transformers==3.4.1
 scikit-learn
 numpy
+fastapi
+uvicorn
+httpx
