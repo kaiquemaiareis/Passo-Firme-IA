@@ -38,6 +38,35 @@ textos oficiais e avaliação independente.
 ## Pendências
 - Revisar e ampliar a base documental
 - Consolidar avaliação factual e latência
-- Implementar e testar a API
+- Integrar a LLM Qwen à API e validar o funcionamento completo
 - Validar a reprodução do notebook
-- Preencher nomes completos e RMs
+
+## API FastAPI
+
+A API possui três endpoints:
+
+- `GET /health`: verifica o funcionamento.
+- `POST /buscar`: recupera fontes usando TF-IDF.
+- `POST /assistente`: responde com base nos documentos ou recusa perguntas sem evidência suficiente.
+
+**Limitação:** atualmente, o endpoint `/assistente` funciona em modo de consulta documental, sem executar a LLM Qwen. Os experimentos com Qwen, RAG e agente estão no notebook.
+
+### Executar localmente
+
+Instale as dependências:
+
+```bash
+pip install -r requirements.txt
+```
+
+Na pasta raiz do projeto, execute:
+
+```bash
+uvicorn api.main:app --reload
+```
+
+A documentação interativa estará disponível em:
+
+http://127.0.0.1:8000/docs
+
+Os endpoints foram testados localmente com FastAPI TestClient.
