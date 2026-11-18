@@ -1,0 +1,6 @@
+torch
+transformers>=4.45,<5
+accelerate
+sentence-transformers==3.4.1
+scikit-learn
+numpy

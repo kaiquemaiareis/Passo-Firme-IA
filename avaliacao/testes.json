@@ -1,0 +1,112 @@
+[
+  {
+    "pergunta": "Quem deve conservar a calçada em frente ao imóvel?",
+    "gabarito": "Os responsáveis pelo imóvel.",
+    "fontes_esperadas": [
+      "lei_15442_art7"
+    ],
+    "deve_recusar": false
+  },
+  {
+    "pergunta": "Quem deve executar e manter as calçadas?",
+    "gabarito": "Em regra, os responsáveis pelos imóveis.",
+    "fontes_esperadas": [
+      "lei_15442_art7"
+    ],
+    "deve_recusar": false
+  },
+  {
+    "pergunta": "Condomínios podem ser responsáveis pelas calçadas?",
+    "gabarito": "Sim, condomínios estão entre os responsáveis.",
+    "fontes_esperadas": [
+      "lei_15442_art10"
+    ],
+    "deve_recusar": false
+  },
+  {
+    "pergunta": "Órgãos públicos cuidam das calçadas de seus imóveis?",
+    "gabarito": "Sim, dos imóveis sob sua responsabilidade.",
+    "fontes_esperadas": [
+      "lei_15442_art10"
+    ],
+    "deve_recusar": false
+  },
+  {
+    "pergunta": "Qual é a largura mínima da faixa livre?",
+    "gabarito": "1,20 metro.",
+    "fontes_esperadas": [
+      "lei_15442_art8"
+    ],
+    "deve_recusar": false
+  },
+  {
+    "pergunta": "Mobiliário urbano pode impedir a passagem segura?",
+    "gabarito": "Não, deve preservar a circulação segura.",
+    "fontes_esperadas": [
+      "lei_15442_art8"
+    ],
+    "deve_recusar": false
+  },
+  {
+    "pergunta": "Qual é o prazo geral de regularização após intimação?",
+    "gabarito": "60 dias, conforme o resumo da base.",
+    "fontes_esperadas": [
+      "lei_15442_art11"
+    ],
+    "deve_recusar": false
+  },
+  {
+    "pergunta": "Qual prazo consta para irregularidades do artigo 8?",
+    "gabarito": "20 dias, conforme o resumo da base.",
+    "fontes_esperadas": [
+      "lei_15442_art11"
+    ],
+    "deve_recusar": false
+  },
+  {
+    "pergunta": "Buracos podem caracterizar calçada mal conservada?",
+    "gabarito": "Sim, quando prejudicam a circulação segura.",
+    "fontes_esperadas": [
+      "decreto_59671_art34"
+    ],
+    "deve_recusar": false
+  },
+  {
+    "pergunta": "Desníveis indevidos prejudicam a conservação da calçada?",
+    "gabarito": "Sim, podem caracterizar mau estado de conservação.",
+    "fontes_esperadas": [
+      "decreto_59671_art34"
+    ],
+    "deve_recusar": false
+  },
+  {
+    "pergunta": "Quantas reclamações sobre calçadas foram registradas ontem?",
+    "gabarito": "Não consta na base de conhecimento fornecida.",
+    "fontes_esperadas": [],
+    "deve_recusar": true
+  },
+  {
+    "pergunta": "Qual é o telefone pessoal do prefeito?",
+    "gabarito": "Não consta na base de conhecimento fornecida.",
+    "fontes_esperadas": [],
+    "deve_recusar": true
+  },
+  {
+    "pergunta": "Quantos acidentes ocorreram hoje na Avenida Paulista?",
+    "gabarito": "Não consta na base de conhecimento fornecida.",
+    "fontes_esperadas": [],
+    "deve_recusar": true
+  },
+  {
+    "pergunta": "Qual foi o orçamento de calçadas de São Paulo em 2025?",
+    "gabarito": "Não consta na base de conhecimento fornecida.",
+    "fontes_esperadas": [],
+    "deve_recusar": true
+  },
+  {
+    "pergunta": "Quantos idosos caíram em calçadas no último mês?",
+    "gabarito": "Não consta na base de conhecimento fornecida.",
+    "fontes_esperadas": [],
+    "deve_recusar": true
+  }
+]

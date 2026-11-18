@@ -1,0 +1,53 @@
+{
+  "aviso": "Métricas transcritas literalmente das saídas das células salvas. Não representam nova execução. A avaliação de precisão factual e alucinações não está completa.",
+  "modelo": "Qwen/Qwen2.5-1.5B-Instruct",
+  "busca_semantica": {
+    "recall_at_1": 0.8,
+    "recall_at_3": 0.9,
+    "perguntas_com_resposta": 10,
+    "celula": 15
+  },
+  "busca_hibrida_sem_filtro": {
+    "recall_at_1": 0.9,
+    "recall_at_3": 1.0,
+    "perguntas_com_resposta": 10,
+    "celula": 20
+  },
+  "busca_hibrida_com_limiar_0_26": {
+    "fontes_esperadas_presentes": 9,
+    "perguntas_com_resposta": 10,
+    "perguntas_sem_resposta_sem_documentos": 5,
+    "total_perguntas_sem_resposta": 5,
+    "celula": 21
+  },
+  "sem_contexto": {
+    "perguntas": 15,
+    "jsons_originais_validos": 14,
+    "llm_chamadas": 15,
+    "celula": 22
+  },
+  "rag_simples": {
+    "perguntas": 15,
+    "llm_chamadas": 9,
+    "jsons_originais_validos": 4,
+    "recusas_automaticas": 6,
+    "recusas_corretas_sistema": 5,
+    "total_sem_resposta": 5,
+    "recusas_indevidas": 1,
+    "saidas_validas_apos_normalizacao": 15,
+    "celulas": [
+      23,
+      26
+    ]
+  },
+  "rag_agente": {
+    "perguntas": 15,
+    "llm_chamadas": 10,
+    "jsons_originais_validos": 5,
+    "recusas_corretas_sistema": 5,
+    "total_sem_resposta": 5,
+    "recusas_indevidas": 0,
+    "celula": 28
+  },
+  "ausente": "Não há no notebook os 45 objetos de resposta originais (somente trechos exibidos e estatísticas), portanto não é possível recomputar o placar completo com integridade sem os JSON temporários."
+}
