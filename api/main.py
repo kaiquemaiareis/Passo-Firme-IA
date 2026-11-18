@@ -122,6 +122,23 @@ def assistente(entrada: Pergunta):
             or "nao tenho informac" in resposta_normalizada
         )
 
+        if recusou:
+            from .fallback_extrativo import buscar_evidencia
+
+            evidencia = buscar_evidencia(
+                pergunta, documento
+            )
+
+            if evidencia:
+                return {
+                    "resposta": evidencia["resposta"],
+                    "fontes": evidencia["fontes"],
+                    "evidencia": evidencia["evidencia"],
+                    "recusa": False,
+                    "resposta_conclusiva": False,
+                    "modo": "fallback_extrativo"
+                }
+
         return {
             "resposta": resposta_llm,
             "fontes": [] if recusou else [documento["id"]],
