@@ -43,8 +43,8 @@ textos oficiais e avaliação independente.
 - API FastAPI implementada e testada.
 - Integração opcional da Qwen com a API.
 - Fallback extrativo para recusas da LLM.
-- 6 testes automatizados aprovados.
-- 2 testes adicionais do fallback aprovados.
+- 8 testes automatizados aprovados, incluindo 
+  2 testes de fallback com respostas simuladas.
 
 ## API FastAPI
 
