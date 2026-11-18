@@ -38,9 +38,8 @@ O agente acrescenta uma ferramenta de busca
 por termos específicos quando a busca principal
 não encontra evidências suficientes.
 
-A API FastAPI disponível no repositório possui
-um modo provisório de consulta documental.
-A integração real da Qwen à API está pendente.
+Qwen foi integrada opcionalmente à API e executada em CPU. 
+A integração com o MVP principal ainda precisa ser comprovada.
 
 ## 4. Tecnologias
 
@@ -142,18 +141,69 @@ avaliacao/analise_5_erros.md
 
 ## 10. API
 
+
+## 10. API e integração da LLM
+
 Endpoints implementados:
 - GET /health
 - POST /buscar
 - POST /assistente
 
-O endpoint /assistente opera atualmente
-em modo de consulta documental sem LLM.
+O endpoint /assistente oferece dois modos:
 
-Testes locais realizados com FastAPI TestClient.
+1. Consulta documental, sem LLM (padrão).
+2. Geração com Qwen2.5-1.5B-Instruct,
+   ativada pelo parâmetro usar_llm=true.
 
-Não há comprovação de implantação pública
-ou integração ao MVP principal nesta etapa.
+A Qwen foi executada de verdade na CPU
+do Google Colab por meio da API FastAPI.
+
+### Resultados observados
+
+- Carregamento real da Qwen: concluído.
+- Resposta HTTP: 200.
+- Testes automatizados publicados: 6 aprovados.
+- Testes adicionais simulados do fallback:
+  2 aprovados.
+
+### Falha identificada
+
+Na pergunta sobre a responsabilidade dos
+condomínios, a Qwen recusou indevidamente
+a resposta, apesar da evidência existente.
+
+A alteração do prompt não resolveu o erro.
+
+### Correção implementada
+
+Foi desenvolvido um fallback extrativo.
+
+Quando a Qwen recusa, o sistema procura
+evidências textuais relacionadas à pergunta.
+
+No teste real, o fallback recuperou:
+
+"Entre os responsáveis pela manutenção estão
+proprietários, possuidores e condomínios."
+
+Fonte: lei_15442_art10.
+
+A evidência foi validada literalmente
+contra o documento recuperado.
+
+O fallback apresenta um trecho documental,
+sem afirmar que a resposta é conclusiva.
+
+### Limitações
+
+Os testes demonstram funcionamento técnico,
+mas não comprovam precisão factual geral.
+
+O fallback utiliza coincidência de palavras
+e pode recuperar trechos pouco relevantes.
+
+A integração com o MVP principal do grupo
+ainda não foi demonstrada.
 
 ## 11. Limitações
 
@@ -163,7 +213,7 @@ ou integração ao MVP principal nesta etapa.
 - Falta avaliação independente;
 - Resultados individuais parcialmente perdidos
   após reinicialização do Google Colab;
-- Integração real entre LLM, API e MVP pendente;
+- Integração da API ao MVP principal pendente;
 - Não foi comprovada uma redução geral da
   taxa de alucinação.
 
