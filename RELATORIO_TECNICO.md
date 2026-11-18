@@ -106,6 +106,27 @@ não transcrições literais.
 o enquadramento jurídico, as licenças e a
 correspondência entre artigos e resumos.
 
+
+### Tabela da base documental
+
+| Fonte | Formato de origem | Formato armazenado | Licença | Trechos |
+|---|---|---|---|---:|
+| Lei Municipal 15.442/2011 | Página de legislação oficial | JSON com resumo manual | Licença específica não identificada | 4 |
+| Decreto Municipal 59.671/2020 | Página de legislação oficial | JSON com resumo manual | Licença específica não identificada | 1 |
+| **Total** | | | | **5** |
+
+Os cinco registros contêm identificador,
+referência normativa, URL e resumo textual.
+
+Os resumos não são transcrições literais.
+A ausência de uma licença identificada
+não significa que a reutilização irrestrita
+tenha sido autorizada.
+
+Detalhamento das fontes:
+[base/FONTES.md](base/FONTES.md)
+
+
 ## 6. Conjunto de testes
 
 15 perguntas com gabarito:
