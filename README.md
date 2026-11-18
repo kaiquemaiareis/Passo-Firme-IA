@@ -35,21 +35,68 @@ textos oficiais e avaliação independente.
 3. Instalar as dependências.
 4. Executar as células em ordem.
 
-## Pendências
-- Revisar e ampliar a base documental
-- Consolidar avaliação factual e latência
-- Integrar a LLM Qwen à API e validar o funcionamento completo
-- Validar a reprodução do notebook
+
+## Status da implementação
+
+- Qwen2.5-1.5B-Instruct executada localmente.
+- RAG e agente avaliados no Google Colab.
+- API FastAPI implementada e testada.
+- Integração opcional da Qwen com a API.
+- Fallback extrativo para recusas da LLM.
+- 6 testes automatizados aprovados.
+- 2 testes adicionais do fallback aprovados.
 
 ## API FastAPI
 
-A API possui três endpoints:
+Endpoints disponíveis:
 
-- `GET /health`: verifica o funcionamento.
-- `POST /buscar`: recupera fontes usando TF-IDF.
-- `POST /assistente`: responde com base nos documentos ou recusa perguntas sem evidência suficiente.
+- `GET /health`: diagnóstico da API.
+- `POST /buscar`: recuperação documental por TF-IDF.
+- `POST /assistente`: consulta ou geração com Qwen.
 
-**Limitação:** atualmente, o endpoint `/assistente` funciona em modo de consulta documental, sem executar a LLM Qwen. Os experimentos com Qwen, RAG e agente estão no notebook.
+O endpoint `/assistente` aceita:
+
+- `usar_llm=false`: consulta documental (padrão).
+- `usar_llm=true`: geração utilizando a Qwen.
+
+Quando a Qwen recusa uma pergunta, o sistema
+pode apresentar um trecho relacionado da base
+por meio do fallback extrativo.
+
+A execução real da Qwen com fallback foi
+validada na CPU do Google Colab.
+
+**Limitações:** o fallback não garante
+a relevância da evidência nem a precisão
+factual da resposta. A avaliação é preliminar.
+
+## Testes
+
+Executar a partir da raiz do repositório:
+
+```bash
+python -m unittest discover -s tests -v
+```
+
+Os seis testes publicados foram executados
+com sucesso. O teste de integração automatizado
+utiliza uma resposta simulada da Qwen.
+
+## Pendências
+
+- Avaliação factual independente e latência.
+- Revisão e ampliação da base documental.
+- Integração da API ao MVP principal.
+- Validação integral da reprodução do notebook.
+- Inclusão dos links finais do MVP e do vídeo.
+
+## Documentação
+
+- [Relatório técnico](RELATORIO_TECNICO.md)
+- [Fontes documentais](base/FONTES.md)
+- [Placar preliminar](avaliacao/placar_preliminar.md)
+- [Análise de cinco erros](avaliacao/analise_5_erros.md)
+
 
 ### Executar localmente
 
