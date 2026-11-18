@@ -7,10 +7,10 @@ Disciplina: Generative AI for Engineering
 Projeto: Passo Firme — CitizenTech
 
 Integrantes: 
-Kaique Maia Reis Silva RM552112
-Orlando Akio Morii Cardoso RM98067
-Pedro Henrique Alves Guariente RM550301
-David de Medeiros Pacheco Junior RM551462
+- Kaique Maia Reis Silva RM552112
+- Orlando Akio Morii Cardoso RM98067
+- Pedro Henrique Alves Guariente RM550301
+- David de Medeiros Pacheco Junior RM551462
 
 
 ## 2. Problema e objetivo
