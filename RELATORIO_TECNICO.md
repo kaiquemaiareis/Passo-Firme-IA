@@ -197,6 +197,7 @@ Foram documentados cinco erros observados:
 Detalhes, causas prováveis e correções estão em:
 avaliacao/analise_5_erros.md
 
+
 ## 10. API e integração da LLM
 
 Endpoints implementados:
@@ -217,9 +218,11 @@ do Google Colab por meio da API FastAPI.
 
 - Carregamento real da Qwen: concluído.
 - Resposta HTTP: 200.
-- Testes automatizados publicados: 6 aprovados.
-- Testes adicionais simulados do fallback:
-  2 aprovados.
+- 8 testes automatizados executados em conjunto.
+- Resultado: 8 aprovados, 0 falhas, 11,912 segundos.
+- 2 testes de fallback com respostas simuladas.
+- O teste automatizado de integração simula a Qwen.
+- A execução real da Qwen foi validada separadamente.
 
 ### Falha identificada
 
@@ -259,6 +262,7 @@ e pode recuperar trechos pouco relevantes.
 
 A integração com o MVP principal do grupo
 ainda não foi demonstrada.
+
 
 ## 11. Limitações
 
