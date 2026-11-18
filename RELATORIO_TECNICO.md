@@ -46,6 +46,38 @@ não encontra evidências suficientes.
 Qwen foi integrada opcionalmente à API e executada em CPU. 
 A integração com o MVP principal ainda precisa ser comprovada.
 
+
+### Diagrama do pipeline da API
+
+```mermaid
+flowchart TD
+    A["Pergunta do cidadão"] --> B["Busca TF-IDF"]
+    B --> C{"Evidência recuperada?"}
+    C -->|Não| D["Recusa documental"]
+    C -->|Sim| E["Documento com ID da fonte"]
+    E --> F{"Usar LLM?"}
+    F -->|Não| G["Consulta documental"]
+    F -->|Sim| H["Qwen2.5-1.5B-Instruct"]
+    H --> I{"Qwen recusou?"}
+    I -->|Não| J["Resposta gerada com fonte associada"]
+    I -->|Sim| K["Fallback extrativo"]
+    K --> L{"Trecho relacionado encontrado?"}
+    L -->|Sim| M["Evidência literal não conclusiva"]
+    L -->|Não| N["Recusa mantida"]
+```
+
+O pipeline experimental do notebook também
+compara três configurações:
+
+1. Qwen sem contexto;
+2. Qwen com RAG e busca híbrida;
+3. Qwen com RAG e agente de recuperação.
+
+O fallback da API recupera trechos relacionados,
+mas não comprova automaticamente a correção
+factual da resposta.
+
+
 ## 4. Tecnologias
 
 - Python e PyTorch
