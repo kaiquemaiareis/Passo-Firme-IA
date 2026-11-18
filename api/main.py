@@ -27,6 +27,7 @@ matriz = buscador.fit_transform(textos)
 
 class Pergunta(BaseModel):
     pergunta: str
+    usar_llm: bool = False
 
 @app.get("/health")
 def health():
@@ -98,6 +99,27 @@ def assistente(entrada: Pergunta):
         }
 
     documento = documentos[indice]
+
+    if entrada.usar_llm:
+        from .llm_local import gerar_resposta
+
+        resposta_llm = gerar_resposta(
+            pergunta,
+            [documento]
+        )
+
+        if not resposta_llm:
+            raise HTTPException(
+                503,
+                "A LLM não produziu uma resposta."
+            )
+
+        return {
+            "resposta": resposta_llm,
+            "fontes": [documento["id"]],
+            "recusa": False,
+            "modo": "qwen_com_contexto"
+        }
 
     return {
         "resposta": documento["texto"],
