@@ -6,7 +6,12 @@ Disciplina: Generative AI for Engineering
 
 Projeto: Passo Firme — CitizenTech
 
-Integrantes: PREENCHER NOMES COMPLETOS E RMs
+Integrantes: 
+Kaique Maia Reis Silva RM552112
+Orlando Akio Morii Cardoso RM98067
+Pedro Henrique Alves Guariente RM550301
+David de Medeiros Pacheco Junior RM551462
+
 
 ## 2. Problema e objetivo
 
@@ -139,9 +144,6 @@ Foram documentados cinco erros observados:
 Detalhes, causas prováveis e correções estão em:
 avaliacao/analise_5_erros.md
 
-## 10. API
-
-
 ## 10. API e integração da LLM
 
 Endpoints implementados:
@@ -236,6 +238,6 @@ factual ou menor alucinação.
 
 ## 13. Links
 
-GitHub: PREENCHER
+GitHub: https://github.com/kaiquemaiareis/Passo-Firme-IA
 MVP: PREENCHER
 Vídeo de demonstração: PREENCHER
