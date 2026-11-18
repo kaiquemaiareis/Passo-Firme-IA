@@ -114,10 +114,18 @@ def assistente(entrada: Pergunta):
                 "A LLM não produziu uma resposta."
             )
 
+        resposta_normalizada = normalizar(resposta_llm)
+
+        recusou = (
+            "nao consta" in resposta_normalizada
+            or "nao ha informac" in resposta_normalizada
+            or "nao tenho informac" in resposta_normalizada
+        )
+
         return {
             "resposta": resposta_llm,
-            "fontes": [documento["id"]],
-            "recusa": False,
+            "fontes": [] if recusou else [documento["id"]],
+            "recusa": recusou,
             "modo": "qwen_com_contexto"
         }
 
